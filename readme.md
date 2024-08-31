@@ -61,19 +61,13 @@ git bush
 ```bash
 git log
 ```
-2. 
-
-HEAD -- это голова.
-Коммит -- это всему голова.
-Статусы файлов:
-<тут пустая строка!>
+2. File states:
 
 ```mermaid
 graph LR;
   untracked -- "git add" --> staged;
-  staged    -- "???"     --> tracked/comitted;
-
-%% стрелка без текста для примера: 
-  A --> B;
+  staged    -- "git commit -m 'message_1'" --> tracked;
+  tracked -- "modify this file" --> modified;
+  modified -- "git add" --> staged;
+  staged -- "git commit -m 'message_n'" --> tracked;
 ``` 
-<и тут пустая строка!> 
