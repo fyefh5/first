@@ -38,7 +38,8 @@ clip < ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 yes
 ```
-6. Add repo to GitHub. Just create there new repo and get its SSH address  
+6. Add repo to GitHub. Just create there new 
+repo and get its SSH address  
 ```bash
 git remote add origin git@github.com:fyefh5/first.git
 ```
@@ -57,7 +58,8 @@ git bush
 
 ## git log
 
-1. There are hashes that identify each commit uniquely  
+1. There are hashes that identify each commit 
+uniquely  
 ```bash
 git log
 ```
@@ -71,3 +73,27 @@ graph LR;
   modified -- "git add" --> staged;
   staged -- "git commit -m 'message_n'" --> tracked;
 ``` 
+
+3. `git commit` commits only those files that 
+are in `git add` which can be checked via  
+```bash
+git status
+```
+
+4. In the .git/ you can see HEAD file which 
+contains the hash of the latest commit. You can 
+also use HEAD instead of the latest hash.
+
+5. `git log --oneline` shows shortened commits 
+which is useful when there are too many of them
+
+6. for oneline representation there is space for 
+only 72 symbols. So, you should make message <= 
+72 symbols long. Also, you should associate each 
+commit with certain problem via certain style:  
+- *Jira-ID*: LGS-239;
+- *conventional commits*: feat, fix;
+- *GitHub*: #334;
+- or somehow else.
+
+
